@@ -10,27 +10,28 @@ st.title('')
 
 @st.cache
 def expensive_computation():
-    # Imagine a time-consuming computation here
-
-    questions = [
-        "Why is it important to play outside and stay active every day?",
-        "How does running or playing sports help your heart stay healthy?",
-        "Why is stretching important before and after exercising?",
-        "What can you do if you feel too tired to play or exercise?",
-        "Why should you try different kinds of sports and activities?",
-        "How can you stay active even when the weather is bad outside?",
-        "What are the benefits of playing team sports with friends?",
-        "Why should you take breaks from sitting for long periods of time?"
-    ]
-# question = ''
-
-    choice = random.randint(0,9)
-
-    question = questions[choice]
-
-    st.title(question)
-
-    return question
+    if st.button('next question')
+        # Imagine a time-consuming computation here
+    
+        questions = [
+            "Why is it important to play outside and stay active every day?",
+            "How does running or playing sports help your heart stay healthy?",
+            "Why is stretching important before and after exercising?",
+            "What can you do if you feel too tired to play or exercise?",
+            "Why should you try different kinds of sports and activities?",
+            "How can you stay active even when the weather is bad outside?",
+            "What are the benefits of playing team sports with friends?",
+            "Why should you take breaks from sitting for long periods of time?"
+        ]
+    # question = ''
+    
+        choice = random.randint(0,9)
+    
+        question = questions[choice]
+    
+        st.title(question)
+    
+        return question
 
 question = expensive_computation()
 
