@@ -24,7 +24,7 @@ def expensive_computation():
         ]
         # question = ''
         
-        choice = random.randint(0,9)
+        choice = random.randint(0,7)
         
         question = questions[choice]
         
