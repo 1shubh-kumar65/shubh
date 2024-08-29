@@ -15,7 +15,6 @@ def expensive_computation():
     questions = [
         "Why is it important to play outside and stay active every day?",
         "How does running or playing sports help your heart stay healthy?",
-        "What are some fun activities you can do to stay fit and active?",
         "Why is stretching important before and after exercising?",
         "What can you do if you feel too tired to play or exercise?",
         "Why should you try different kinds of sports and activities?",
