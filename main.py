@@ -8,7 +8,7 @@ genai.configure(api_key='AIzaSyCUiK-jsVHyHK7IEhBYi_bAbi9njoDM8-I')
 
 st.title('')
 
-@st.cache_data
+@st.cache
 def expensive_computation():
     # Imagine a time-consuming computation here
 
