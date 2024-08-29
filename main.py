@@ -10,7 +10,7 @@ st.title('')
 
 @st.cache
 def expensive_computation():
-    if st.button('next question')
+    if st.button('next question'):
         # Imagine a time-consuming computation here
     
         questions = [
