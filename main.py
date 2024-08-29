@@ -11,7 +11,7 @@ st.title('')
 @st.cache
 def expensive_computation():
         # Imagine a time-consuming computation here
-    
+        
         questions = [
             "Why is it important to play outside and stay active every day?",
             "How does running or playing sports help your heart stay healthy?",
@@ -22,14 +22,14 @@ def expensive_computation():
             "What are the benefits of playing team sports with friends?",
             "Why should you take breaks from sitting for long periods of time?"
         ]
-    # question = ''
-    
+        # question = ''
+        
         choice = random.randint(0,9)
-    
+        
         question = questions[choice]
-    
+        
         st.title(question)
-    
+        
         return question
 
 question = expensive_computation()
