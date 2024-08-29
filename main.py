@@ -1,29 +1,45 @@
 import streamlit as st
+import random
 
-st.title('project name')
-col1, col2 = st.columns(2)
+import google.generativeai as genai
+import os
 
-with col1:
-    st.image('1.jpg')
-with col2:
-    st.write(
-        '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    ''')
+genai.configure(api_key='AIzaSyCUiK-jsVHyHK7IEhBYi_bAbi9njoDM8-I')
 
-#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+st.title('')
 
-st.title('project name')
-col1, col2 = st.columns(2)
+@st.cache_data
+def expensive_computation():
+    # Imagine a time-consuming computation here
 
+    questions = [
+        "Why is it important to play outside and stay active every day?",
+        "How does running or playing sports help your heart stay healthy?",
+        "What are some fun activities you can do to stay fit and active?",
+        "Why is stretching important before and after exercising?",
+        "How does being active help you do better in school?",
+        "What can you do if you feel too tired to play or exercise?",
+        "Why should you try different kinds of sports and activities?",
+        "How can you stay active even when the weather is bad outside?",
+        "What are the benefits of playing team sports with friends?",
+        "Why should you take breaks from sitting for long periods of time?"
+    ]
+# question = ''
 
-with col1:
-    st.image('1.jpg')
+    choice = random.randint(0,9)
 
-with col2:
-    st.write(
-        '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    ''')
+    question = questions[choice]
 
-#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    st.title(question)
 
-    
+    return question
+
+question = expensive_computation()
+
+a = st.chat_input('enter your answer here')
+
+if a:
+    persauna = 'you are an ai which check the answer given by the user the question will be provided to you and you have to tell if it is carrect or incorrect and why and what will be the coeerct answer if incorrect and also mention the question the question is :'
+    model = genai.GenerativeModel("gemini-1.5-flash")
+    response = model.generate_content(persauna+question+'the answer is :'+a)
+    st.write(response.text)
