@@ -13,17 +13,11 @@ def expensive_computation():
         # Imagine a time-consuming computation here
         
         questions = [
-            "How does running or playing sports help your heart stay healthy?",
-            "Why is stretching important before and after exercising?",
-            "What can you do if you feel too tired to play or exercise?",
-            "Why should you try different kinds of sports and activities?",
-            "How can you stay active even when the weather is bad outside?",
-            "What are the benefits of playing team sports with friends?",
-            "Why should you take breaks from sitting for long periods of time?"
+            'what is the health index of madhya pradesh'
         ]
         # question = ''
         
-        choice = random.randint(0,7)
+        choice = 0
         
         question = questions[choice]
         
