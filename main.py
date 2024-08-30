@@ -10,6 +10,7 @@ st.title('')
 
 
 def expensive_computation():
+        global question
         # Imagine a time-consuming computation here
         
         questions = [
