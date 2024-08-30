@@ -10,7 +10,6 @@ st.title('')
 
 
 def expensive_computation():
-        global question
         # Imagine a time-consuming computation here
         
         questions = [
@@ -32,8 +31,8 @@ def expensive_computation():
         st.title(question)
         
         return question
-if st.button('next question'):
-        question = expensive_computation()
+
+question = expensive_computation()
 
 a = st.chat_input('enter your answer here')
 
