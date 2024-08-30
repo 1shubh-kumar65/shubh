@@ -13,7 +13,6 @@ def expensive_computation():
         # Imagine a time-consuming computation here
         
         questions = [
-            "Why is it important to play outside and stay active every day?",
             "How does running or playing sports help your heart stay healthy?",
             "Why is stretching important before and after exercising?",
             "What can you do if you feel too tired to play or exercise?",
