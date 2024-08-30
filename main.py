@@ -13,7 +13,8 @@ def expensive_computation():
         # Imagine a time-consuming computation here
         
         questions = [
-            'what is the health index of madhya pradesh'
+            'what is the health index of madhya pradesh',
+                'what is the health index of jammu kashmir'
         ]
         # question = ''
         
