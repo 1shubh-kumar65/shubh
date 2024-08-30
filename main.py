@@ -13,8 +13,8 @@ def expensive_computation():
         # Imagine a time-consuming computation here
         
         questions = [
-            'which yoga asan shows acute angle',
-                'what is the health index of jammu kashmir'
+            'Which yoga asana depicts an acute angle ?',
+                ''
         ]
         # question = ''
         
@@ -31,7 +31,7 @@ question = expensive_computation()
 a = st.chat_input('enter your answer here')
 
 if a:
-    persauna = 'you are an ai which check the answer given by the user the question will be provided to you and you have to tell if it is carrect or incorrect and why and what will be the coeerct answer if incorrect and also mention the question the question is :'
+    persauna = 'you are an ai which check the answer given by the user the question will be provided to you and you have to tell if it is carrect or incorrect and why and what will be the coeerct answer if incorrect and also mention the question some data is kerela has the highest health index in india the question is :'
     model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(persauna+question+'the answer is :'+a)
     st.write(response.text)
