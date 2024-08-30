@@ -14,7 +14,7 @@ def expensive_computation():
         
         questions = [
             'Which yoga asana depicts an acute angle ?',
-                ''
+                'which state has the highest health index in india'
         ]
         # question = ''
         
